@@ -1,0 +1,35 @@
+---
+title: "Get QR"
+api: "GET https://api.softtopos.be/api/v1/website/qr"
+description: "The Get QR method returns the QR code as a base64 encoded image, which can be directly added to your HTML img tag's src attribute."
+---
+
+### Response
+
+<ResponseField name="qr" type="string">
+  Returning QR code as base64 encoded image
+</ResponseField>
+
+<ResponseField name="status" type="number">
+  Indicates whether the call was successful. 200 if successful, 400 if not.
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request POST 'https://api.softtopos.be/api/v1/website/qr' \
+--header 'Accept: application/json'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+  "qr": "data:image/svg+xml;base64,",
+  "statusCode": 200
+}
+```
+
+</ResponseExample>

@@ -7,19 +7,19 @@
   },
   "favicon": "/favicon.png",
   "colors": {
-    "primary": "#0069ED",
-    "light": "#4D9CFF",
-    "dark": "#0050B4"
+    "primary": "#1D863C",
+    "light": "#1D863C",
+    "dark": "#1D863C"
   },
   "topbarLinks": [
     {
-      "name": "Documentation",
-      "url": "https://mintlify.com/docs"
+      "name": "Sanbox Mode",
+      "url": "https://sanbox.softtopos.be"
     }
   ],
   "topbarCtaButton": {
     "name": "Get Started",
-    "url": "https://github.com/mintlify/starter"
+    "url": "https://api.softtopos.be"
   },
   "anchors": [
     {
@@ -30,36 +30,43 @@
     {
       "name": "Changelog",
       "icon": "list",
-      "url": "https://mintlify.com"
-    },
-    {
-      "name": "Community",
-      "icon": "discord",
-      "url": "https://mintlify.com/community"
+      "url": "changelog"
     }
   ],
   "navigation": [
     {
       "group": "Home",
-      "pages": ["introduction", "features"]
+      "pages": ["introduction", "api-reference"]
     },
     {
       "group": "API Documentation",
       "pages": ["api-reference/authentication"]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Changelog API",
+      "pages": ["changelog/api"]
+    },
+    {
+      "group": "Changelog JS",
+      "pages": ["changelog/js"]
+    },
+    {
+      "group": "Website",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/update",
-        "api-reference/endpoint/delete"
+        "api-reference/endpoint/website/qr/get"
+      ]
+    },
+    {
+      "group": "Requests",
+      "pages": [
+        "api-reference/endpoint/request/create",
+        "api-reference/endpoint/request/get",
+        "api-reference/endpoint/request/cancel"
       ]
     }
   ],
   "footerSocials": {
-    "twitter": "https://twitter.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "twitter": "https://twitter.com",
+    "github": "https://github.com"
   }
 }

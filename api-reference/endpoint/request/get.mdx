@@ -1,0 +1,67 @@
+---
+title: "Get Request"
+api: "GET https://api.softtopos.be/api/v1/requests/get/{uuid}"
+description: "This method requires a UUID as a URL parameter, which you can find in the Request Create method response. Once you have obtained the UUID, you can send the GET request with the correct UUID to retrieve payment information and its corresponding statuses."
+---
+
+### Response
+
+<ResponseField name="total" type="number">
+    This is the payment total coming with 2 decimal places
+</ResponseField>
+
+<ResponseField name="commission" type="number">
+    This is the calculated payment comission for the softopos api.
+</ResponseField>
+
+<ResponseField name="meta" type="array">
+   This should be an array it's retuning what you has been submitted in the request create
+</ResponseField>
+
+<ResponseField name="success" type="boolean">
+    This is indicating payment success statues 
+</ResponseField>
+
+<ResponseField name="failed" type="boolean">
+    This is indicating payment failed statues 
+</ResponseField>
+
+<ResponseField name="ref" type="boolean">
+    This is retuning the same data what you has been submitted in the request create
+</ResponseField>
+
+<ResponseField name="transaction" type="object">
+    This is containes all the transaction data related to the request, this is only returning if payment success is true.
+</ResponseField>
+
+<ResponseField name="status" type="number">
+  Indicates whether the call was successful. 200 if successful, 400 if not.
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location 'https://api.softtopos.be/api/v1/requests/get/a2e66a51-0d64-45ce-adb7-c38d51cc200f' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--data ''
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+  "total": 1.00,
+  "commission": 0.01,
+  "meta": "{\"order_id\":\"ORD230420001\",\"invoice_id\":\"INV0001\"}",
+  "success": false,
+  "failed": false,
+  "ref": "REF001",
+  "transaction": null,
+  "statusCode": 200
+}
+```
+
+</ResponseExample>

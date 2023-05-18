@@ -1,0 +1,62 @@
+---
+title: "Create Request"
+api: "POST https://api.softtopos.be/api/v1/requests/create"
+description: "This endpoint creates a payment request"
+---
+
+Request create requires "total" and "ref".
+
+### Body
+
+<ParamField body="total" type="number">
+  "Total" must be a numeric value with two decimal places (0.01). If the value contains more than two decimal places, SofToPos will round it to two decimal places.
+</ParamField>
+
+<ParamField body="meta" type="array">
+   "Meta" should be an array where you can include additional information to the request. SofToPos webhook also includes "meta" array after payment success or failure.
+</ParamField>
+
+<ParamField body="ref" type="string">
+  "Ref" can be either a string or numeric value, ref you can use as a refeance to the payment request
+</ParamField>
+
+### Response
+
+<ResponseField name="uuid" type="string">
+   UUID that you can use to get the payment request status using the "requests/get" method
+</ResponseField>
+
+<ResponseField name="status" type="number">
+  Indicates whether the call was successful. 200 if successful, 400 if not.
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location 'https://api.softtopos.be/api/v1/requests/create' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--data '{
+    
+    "total" : 0.01,
+    "meta" : {
+        "order_id" : "ORD230420001",
+        "invoice_id" : "INV0001"
+    },
+    "ref" : "REF001"
+
+}'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+  "uuid": "a2e66a51-0d64-45ce-adb7-c38d51cc200f",
+  "statusCode": 200
+}
+```
+
+</ResponseExample>

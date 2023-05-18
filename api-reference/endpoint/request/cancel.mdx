@@ -1,0 +1,33 @@
+---
+title: "Cancel Request"
+api: "POST https://api.softtopos.be/api/v1/requests/cancel/{uuid}"
+description: "This method requires a request UUID as a URL parameter. Once you cancel the request, it cannot be opened from the SoftToPos mobile app."
+---
+
+### Response
+
+<ResponseField name="status" type="number">
+  Indicates whether the call was successful. 200 if successful, 400 if not.
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location -g --request POST 'https://api.softtopos.be/api/v1/requests/cancel/{uuid}' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--data ''
+```
+
+</RequestExample>
+
+
+<ResponseExample>
+
+```json Response
+{
+  "statusCode": 200
+}
+```
+
+</ResponseExample>
