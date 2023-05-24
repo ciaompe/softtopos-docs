@@ -4,7 +4,7 @@ api: "POST https://api.softtopos.be/api/v1/requests/create"
 description: "This endpoint creates a payment request"
 ---
 
-Request create requires "total" and "ref".
+The create request requires both "total" and "ref".
 
 ### Body
 
@@ -13,21 +13,21 @@ Request create requires "total" and "ref".
 </ParamField>
 
 <ParamField body="meta" type="array">
-   "Meta" should be an array where you can include additional information to the request. SofToPos webhook also includes "meta" array after payment success or failure.
+   "Meta" should be an array where you can include additional information in the request. SofToPos webhook also includes the "meta" array after payment success or failure.
 </ParamField>
 
 <ParamField body="ref" type="string">
-  "Ref" can be either a string or numeric value, ref you can use as a refeance to the payment request
+  "Ref" can be either a string or numeric value. You can use "ref" as a reference to the payment request.
 </ParamField>
 
 ### Response
 
 <ResponseField name="uuid" type="string">
-   UUID that you can use to get the payment request status using the "requests/get" method
+   UUID is a unique identifier that you can use to get the payment request status using the "requests/get" method.
 </ResponseField>
 
 <ResponseField name="status" type="number">
-  Indicates whether the call was successful. 200 if successful, 400 if not.
+  This indicates whether the call was successful or not. A status code of 200 is returned if the call was successful and a status code of 400 is returned if the call was not successful.
 </ResponseField>
 
 <RequestExample>

@@ -7,35 +7,35 @@ description: "This method requires a UUID as a URL parameter, which you can find
 ### Response
 
 <ResponseField name="total" type="number">
-    This is the payment total coming with 2 decimal places
+    This represents the payment total, rounded to 2 decimal places.
 </ResponseField>
 
 <ResponseField name="commission" type="number">
-    This is the calculated payment comission for the softopos api.
+    This represents the calculated payment commission for the SoftoPos API.
 </ResponseField>
 
 <ResponseField name="meta" type="array">
-   This should be an array it's retuning what you has been submitted in the request create
+   This should be an array. It returns what has been submitted in the create request.
 </ResponseField>
 
 <ResponseField name="success" type="boolean">
-    This is indicating payment success statues 
+    This indicates the payment success status.
 </ResponseField>
 
 <ResponseField name="failed" type="boolean">
-    This is indicating payment failed statues 
+    This indicates the payment failure status. 
 </ResponseField>
 
 <ResponseField name="ref" type="boolean">
-    This is retuning the same data what you has been submitted in the request create
+    This returns the same data that was submitted in the create request.
 </ResponseField>
 
 <ResponseField name="transaction" type="object">
-    This is containes all the transaction data related to the request, this is only returning if payment success is true.
+    This contains all the transaction data related to the request, and is only returned if the payment success status is true.
 </ResponseField>
 
 <ResponseField name="status" type="number">
-  Indicates whether the call was successful. 200 if successful, 400 if not.
+  This indicates whether the call was successful or not. A status code of 200 is returned if the call was successful and a status code of 400 is returned if the call was not successful.
 </ResponseField>
 
 <RequestExample>

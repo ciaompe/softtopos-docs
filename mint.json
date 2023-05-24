@@ -63,6 +63,18 @@
         "api-reference/endpoint/request/get",
         "api-reference/endpoint/request/cancel"
       ]
+    },
+    {
+      "group": "Webhook",
+      "pages": [
+        "api-reference/endpoint/webhook/log/get"
+      ]
+    },
+    {
+      "group": "Transaction",
+      "pages": [
+        "api-reference/endpoint/transaction/get"
+      ]
     }
   ],
   "footerSocials": {

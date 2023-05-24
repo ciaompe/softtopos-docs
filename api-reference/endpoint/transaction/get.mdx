@@ -1,0 +1,76 @@
+---
+title: "Get Transaction"
+api: "GET https://api.softtopos.be/api/v1/transactions/get/{uuid}"
+description: "This endpoint will return transaction information related to the specified request UUID."
+---
+
+### Response
+
+<ResponseField name="total" type="number">
+    This represents the transaction total, rounded to 2 decimal places.
+</ResponseField>
+
+<ResponseField name="commission" type="number">
+    This represents the calculated transaction commission for the SoftoPos API.
+</ResponseField>
+
+<ResponseField name="trx" type="string">
+    This refers to the transaction ID.
+</ResponseField>
+
+<ResponseField name="trx_message" type="string">
+    This refers to the transaction message.
+</ResponseField>
+
+<ResponseField name="cardType" type="string">
+    This specifies the card type used for the transaction, such as "Visa" or "Master".
+</ResponseField>
+
+<ResponseField name="verificationMethod" type="string">
+    This specifies the card verification method. It could either be PIN verification or some other verification method.
+</ResponseField>
+
+<ResponseField name="type" type="string">
+    This refers to the transaction type, which should either be fail or success.
+</ResponseField>
+
+<ResponseField name="ref" type="string">
+    This "ref" is the same value that you sent in the create request endpoint.
+</ResponseField>
+
+<ResponseField name="terminal_name" type="string">
+    This shows the terminal name to identify which terminal performed the transaction.
+</ResponseField>
+
+<ResponseField name="created_at" type="datetime">
+    This displays the date and time when the log was created.
+</ResponseField>
+
+<RequestExample>
+```bash Example Request
+curl --location 'https://api.softtopos.be/api/v1/transactions/get/4b1b4b5b-2ad9-480e-8daf-a69650ff39fd' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--data ''
+```
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+  "data": {
+    "amount": 15,
+    "commission": 0,
+    "trx": "F00000129",
+    "cardType": "VISA",
+    "verificationMethod": "PIN",
+    "type": "fail",
+    "trx_message": "Transaction Canceled",
+    "created_at": "2023-04-21T22:50:31.000000Z",
+    "ref": "payref-0003",
+    "info": null
+  },
+  "statusCode": 200
+}
+```
+</ResponseExample>

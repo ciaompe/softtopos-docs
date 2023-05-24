@@ -1,0 +1,49 @@
+---
+title: "Get Logs"
+api: "GET https://api.softtopos.be/api/v1/webhook/log"
+description: "The webhook log contains all the logs related to the specified website. Each webhook log includes status, response, and payload"
+---
+
+### Response
+
+<ResponseField name="status" type="string">
+    The status shows the response status of your website webhook endpoint. If your webhook endpoint returns a "404 Not Found" status, it will be recorded as "404" in the status field of the webhook log.
+</ResponseField>
+
+<ResponseField name="payload" type="array">
+    The payload includes all information related to the request, including the "ref" and "meta" information.
+</ResponseField>
+
+<ResponseField name="response" type="string">
+    This displays the response from your website's webhook endpoint.
+</ResponseField>
+
+<ResponseField name="created_at" type="datetime">
+    This displays the date and time when the log was created.
+</ResponseField>
+
+<RequestExample>
+```bash Example Request
+curl --location 'https://api.softtopos.be/api/v1/webhook/log' \
+--header 'Accept: application/json'
+```
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+    "webhooklogs": [
+        {
+            "id": 1,
+            "status": "200",
+            "payload": "{\n\t\"request\": {\n\t\t\"id\": 388,\n\t\t\"ref\": \"payref-0003\",\n\t\t\"trx\": \"\",\n\t\t\"meta\": \"[]\",\n\t\t\"paid\": false,\n\t\t\"uuid\": \"ba02ec69-7606-4ed3-b2c0-2dbe19e31665\",\n\t\t\"faild\": true,\n\t\t\"amount\": 0.01,\n\t\t\"cancel\": false,\n\t\t\"commission\": 0.0001\n\t}\n}",
+            "response": "{\n\t\"key\": \"065423d53095dbdc\"\n}",
+            "created_at": "2023-03-29T10:06:51.000000Z"
+        }
+	],
+    "statusCode": 200
+}
+```
+
+</ResponseExample>
